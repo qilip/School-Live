@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
-import { HomePage } from '../home/home';
+import { DashboardPage } from '../dashboard/dashboard';
+
+//추가
+import { AddTodoPage } from '../add-todo/add-todo';
+import { CalendarvPage } from '../calendarv/calendarv';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  tab1Root = DashboardPage;
+  tab2Root = AddTodoPage;
+  tab3Root = CalendarvPage;
 
   constructor() {
 
