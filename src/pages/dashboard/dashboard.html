@@ -1,20 +1,22 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>오늘 할 일</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
+  </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
-    <ion-item-sliding *ngFor="let item of mytodos">
-      <ion-item>{{item}}</ion-item>
-      <!-- <ion-icon name="leaf" item-start></ion-icon> -->
-      <!--  {{item}} -->
-      <!-- <ion-icon name="rose" item-end></ion-icon> -->
+    
+    <ion-item-sliding *ngFor="let item of items" (click)="viewItem(item)">
+      <ion-item>{{item.title}}</ion-item>
       <ion-item-options>
         <button ion-button expandable (click)="deleteItem(item)"><ion-icon name="trash"></ion-icon>삭제</button>
       </ion-item-options>
     </ion-item-sliding>
+  
   </ion-list>
-  <button ion-button full (click)="goToAddTodoPage()">할 일 추가</button>
+
 </ion-content>

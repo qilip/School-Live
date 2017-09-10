@@ -7,15 +7,19 @@ import { DashboardPage } from '../pages/dashboard/dashboard';
 import { TabsPage } from '../pages/tabs/tabs';
 // 추가한 부분
 import { AddTodoPage } from '../pages/add-todo/add-todo';
-import { TodoService } from '../pages/services/todo.service';
+//import { TodoService } from '../pages/services/todo.service';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { CalendarvPage } from '../pages/calendarv/calendarv';
 import { NgCalendarModule } from 'ionic2-calendar';
 
+import * as moment from 'moment';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { ItemDetailPage } from '../pages/item-detail/item-detail';
+import { DataProvider } from '../providers/data/data';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DashboardPage,
     TabsPage,
     CalendarvPage,
+    ItemDetailPage,
     AddTodoPage //추가한 부분
   ],
   imports: [
@@ -37,13 +42,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DashboardPage,
     TabsPage,
     CalendarvPage,
+    ItemDetailPage,
     AddTodoPage //추가된 부분
   ],
   providers: [
     StatusBar,
-    TodoService,
+    //TodoService,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DataProvider
   ]
 })
 export class AppModule {}
