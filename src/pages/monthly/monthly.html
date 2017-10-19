@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar color='primary'>
+    <ion-title>이번 달 할 일</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="당겨서 새로고침"
+          refreshingSpinner="circles"
+          refreshingText="저장소 로드중...">
+        </ion-refresher-content>
+      </ion-refresher>
+
+  <ion-list>
+
+    <ion-list>
+      8일 ~ 14일
+    </ion-list>
+
+    <ion-list>
+      15일 ~ 21일
+    </ion-list>
+
+    <ion-list>
+      22일 ~ 28일
+    </ion-list>
+
+    <ion-list>
+      29일 ~
+    </ion-list>
+
+
+    <ion-item-sliding *ngFor="let item of items" (click)="viewItem(item)">
+      <ion-item>{{item?.title}}</ion-item>
+      <ion-item-options>
+        <button ion-button expandable (click)="deleteItem(item)"><ion-icon name="trash"></ion-icon>삭제</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

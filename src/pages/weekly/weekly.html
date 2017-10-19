@@ -1,0 +1,73 @@
+<!--
+  Generated template for the WeeklyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>이번 주 할 일</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="당겨서 새로고침"
+          refreshingSpinner="circles"
+          refreshingText="저장소 로드중...">
+        </ion-refresher-content>
+      </ion-refresher>
+
+
+      <ion-list>
+        <ion-item-sliding *ngFor="let item of items" (click)="viewItem(item)">
+    
+          <ion-item *ngIf="item.ends > todaydate &&
+                           item.ends <= d7date">
+    
+              <ion-icon *ngIf="item.ends < todaydate && item.jungyo == 5" name="alert" color="p5" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends < todaydate && item.jungyo == 4" name="alert" color="p4" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends < todaydate && item.jungyo == 3" name="alert" color="p3" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends < todaydate && item.jungyo == 2" name="alert" color="p2" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends < todaydate && item.jungyo == 1" name="alert" color="p1" item-start></ion-icon>
+      
+              <ion-icon *ngIf="item.ends == todaydate && item.jungyo == 5" name="sunny" color="p5" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends == todaydate && item.jungyo == 4" name="sunny" color="p4" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends == todaydate && item.jungyo == 3" name="sunny" color="p3" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends == todaydate && item.jungyo == 2" name="sunny" color="p2" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends == todaydate && item.jungyo == 1" name="sunny" color="p1" item-start></ion-icon>
+      
+              <ion-icon *ngIf="item.ends > todaydate && item.ends <= d5date && item.jungyo == 5" name="clock" color="p5" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends > todaydate && item.ends <= d5date && item.jungyo == 4" name="clock" color="p4" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends > todaydate && item.ends <= d5date && item.jungyo == 3" name="clock" color="p3" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends > todaydate && item.ends <= d5date && item.jungyo == 2" name="clock" color="p2" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends > todaydate && item.ends <= d5date && item.jungyo == 1" name="clock" color="p1" item-start></ion-icon>
+      
+              <ion-icon *ngIf="item.ends > d5date && item.jungyo == 5" name="clipboard" color="p5" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends > d5date && item.jungyo == 4" name="clipboard" color="p4" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends > d5date && item.jungyo == 3" name="clipboard" color="p3" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends > d5date && item.jungyo == 2" name="clipboard" color="p2" item-start></ion-icon>
+              <ion-icon *ngIf="item.ends > d5date && item.jungyo == 1" name="clipboard" color="p1" item-start></ion-icon>
+            
+        {{item?.title}}
+      
+        <ion-icon *ngIf="item.noti == true" name="alarm" color="secondary" item-end></ion-icon>
+        
+      </ion-item>
+    
+          <ion-item-options>
+            <button ion-button expandable (click)="deleteItem(item)"><ion-icon name="trash"></ion-icon>삭제</button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+
+</ion-content>

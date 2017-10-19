@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 
 import { DashboardPage } from '../dashboard/dashboard';
 
-//추가
-import { AddTodoPage } from '../add-todo/add-todo';
-import { CalendarvPage } from '../calendarv/calendarv';
+import { MonthlyPage } from '../monthly/monthly';
+
+
+import { DailyPage } from '../daily/daily';
+import { WeeklyPage } from '../weekly/weekly';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -12,8 +14,9 @@ import { CalendarvPage } from '../calendarv/calendarv';
 export class TabsPage {
 
   tab1Root = DashboardPage;
-  tab2Root = AddTodoPage;
-  tab3Root = CalendarvPage;
+  tab2Root = DailyPage;
+  tab3Root = WeeklyPage;
+  tab4Root = MonthlyPage;
 
   constructor() {
 

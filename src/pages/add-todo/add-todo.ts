@@ -15,8 +15,9 @@ export class AddTodoPage {
   */
   title;
   description;
-  starts: String = moment(new Date().toISOString()).locale('ko').format();
-  ends: String = moment(new Date().toISOString()).locale('ko').format();
+  ends: String = moment(new Date().toISOString()).startOf('day').locale('ko').format();
+  jungyo;
+  noti;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -44,8 +45,9 @@ export class AddTodoPage {
     
           title: this.title,
           description: this.description,
-          starts: this.starts,
-          ends: this.ends
+          ends: this.ends,
+          jungyo: this.jungyo,
+          noti: this.noti
     
         };
     

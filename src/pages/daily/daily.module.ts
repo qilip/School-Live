@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { CalendarvPage } from './calendarv';
+import { DailyPage } from './daily';
 
 @NgModule({
   declarations: [
-    CalendarvPage,
+    DailyPage,
   ],
   imports: [
-    IonicPageModule.forChild(CalendarvPage),
+    IonicPageModule.forChild(DailyPage),
   ],
 })
-export class CalendarvPageModule {}
+export class DailyPageModule {}

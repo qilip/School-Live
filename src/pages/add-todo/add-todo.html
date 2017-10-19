@@ -9,9 +9,7 @@
 
 </ion-header>
 
-
 <ion-content padding>
-
   <ion-list>
 
     <ion-item>
@@ -25,22 +23,48 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>시작일</ion-label>
-      <ion-datetime displayFormat="YYYY년 M월 D일" [(ngModel)]="starts"></ion-datetime>
-      </ion-item>
-      <ion-item>
-          <ion-label>시작시간</ion-label>
-      <ion-datetime displayFormat="HH:mm" [(ngModel)]="starts"></ion-datetime>
+      <ion-label>마감일</ion-label>
+      <ion-datetime displayFormat="YYYY년 M월 D일" [(ngModel)]="ends"></ion-datetime>
     </ion-item>
 
+    <ion-list radio-group [(ngModel)]="jungyo">
+      
+        <ion-list-header>
+          상태
+        </ion-list-header>
+      
+        <ion-item>
+          <ion-label>진행중</ion-label>
+          <ion-radio value="5"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>긴급</ion-label>
+          <ion-radio value="4"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>우선순위 높음</ion-label>
+          <ion-radio value="3"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>우선순위 보통</ion-label>
+          <ion-radio value="2"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>우선순위 낮음</ion-label>
+          <ion-radio value="1"></ion-radio>
+        </ion-item>
+      
+      </ion-list>
+
     <ion-item>
-      <ion-label>종료일</ion-label>
-      <ion-datetime displayFormat="YYYY년 M월 D일" [(ngModel)]="ends"></ion-datetime>
-      </ion-item>
-      <ion-item>
-          <ion-label>종료시간</ion-label>
-      <ion-datetime displayFormat="HH:mm" [(ngModel)]="ends"></ion-datetime>
+      <ion-label>알림</ion-label>
+      <ion-toggle color='secondary' [(ngModel)]="noti"></ion-toggle>
     </ion-item>
+
   </ion-list>
 
   <button full ion-button color="secondary" (click)="saveItem()">저장!</button>

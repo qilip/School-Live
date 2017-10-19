@@ -11,8 +11,9 @@ export class ItemDetailPage {
 
   title;
   description;
-  starts: String = moment(new Date().toISOString()).locale('ko').format();
   ends: String = moment(new Date().toISOString()).locale('ko').format();
+  jungyo;
+  noti;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public vc:ViewController) {
   }
@@ -20,8 +21,9 @@ export class ItemDetailPage {
   ionViewDidLoad() {
     this.title = this.navParams.get('item').title;
     this.description = this.navParams.get('item').description;
-    this.starts = this.navParams.get('item').starts;
     this.ends = this.navParams.get('item').ends;
+    this.jungyo = this.navParams.get('item').jungyo;
+    this.noti = this.navParams.get('item').noti;
   }
 
   saveItem(){
@@ -30,8 +32,9 @@ export class ItemDetailPage {
     
           title: this.title,
           description: this.description,
-          starts: this.starts,
-          ends: this.ends
+          ends: this.ends,
+          jungyo: this.jungyo,
+          noti: this.noti
     
         };
     
