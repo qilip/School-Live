@@ -8,6 +8,8 @@ import { ItemDetailPage } from '../item-detail/item-detail';
 import { DataProvider } from '../../providers/data/data';
 import * as moment from 'moment';
 
+import { NotimainPage } from '../notimain/notimain';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'dashboard.html'
@@ -67,6 +69,12 @@ export class DashboardPage {
     });
   }
 */
+
+setAlarm(){
+  let addModal = this.modalCtrl.create(NotimainPage);
+  addModal.present();
+}
+
 addItem(){
   let addModal = this.modalCtrl.create(AddTodoPage);
   addModal.onDidDismiss((item) => {

@@ -31,7 +31,7 @@
 
     <ion-item>
       <ion-label>마감일</ion-label>
-      <ion-datetime displayFormat="YYYY년 M월 D일" [(ngModel)]="ends"></ion-datetime>
+      <ion-datetime displayFormat="YYYY년 M월 D일" min="2017" max="2030-12-31" [(ngModel)]="ends"></ion-datetime>
     </ion-item>
 
     <ion-list radio-group [(ngModel)]="jungyo">
@@ -66,12 +66,12 @@
           </ion-item>
       
       </ion-list>
-
+<!--
     <ion-item>
       <ion-label>알림</ion-label>
       <ion-toggle color='secondary' [(ngModel)]="noti"></ion-toggle>
     </ion-item>
-
+  -->
   </ion-list>
 
   <button full ion-button color="secondary" (click)="saveItem()">수정!</button>

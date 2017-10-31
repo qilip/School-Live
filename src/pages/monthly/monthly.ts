@@ -17,6 +17,14 @@ export class MonthlyPage {
   
   public items = [];
   public todaydate: String = moment(new Date().toISOString()).startOf('day').locale('ko').format();
+  public d1date: String = moment(new Date().toISOString()).startOf('day').add(1, 'days').locale('ko').format();
+  public d3date: String = moment(new Date().toISOString()).startOf('day').add(3, 'days').locale('ko').format();
+  public d5date: String = moment(new Date().toISOString()).startOf('day').add(5, 'days').locale('ko').format();
+  public d7date: String = moment(new Date().toISOString()).startOf('day').add(7, 'days').locale('ko').format();
+
+  public d14date: String = moment(new Date().toISOString()).startOf('day').add(14, 'days').locale('ko').format();
+  public d21date: String = moment(new Date().toISOString()).startOf('day').add(21, 'days').locale('ko').format();
+  public d28date: String = moment(new Date().toISOString()).startOf('day').add(28, 'days').locale('ko').format();
 
   constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,

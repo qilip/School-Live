@@ -1,7 +1,10 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>대시보드</ion-title>
-    <ion-buttons end>
+    <ion-buttons start left>
+      <button ion-button icon-only (click)="setAlarm()"><ion-icon name="alarm"></ion-icon></button>
+    </ion-buttons>
+    <ion-buttons end right>
       <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
   </ion-buttons>
   </ion-navbar>

@@ -13,6 +13,8 @@ import { MonthlyPage } from '../pages/monthly/monthly';
 import { DailyPage } from '../pages/daily/daily';
 import { WeeklyPage } from '../pages/weekly/weekly';
 
+import { NotimainPage } from '../pages/notimain/notimain';
+
 //import { TodoService } from '../pages/services/todo.service';
 import { IonicStorageModule } from '@ionic/storage';
 //lagacy calendar
@@ -30,6 +32,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { DataProvider } from '../providers/data/data';
 
+import { LocalNotifications } from '@ionic-native/local-notifications';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -39,7 +43,8 @@ import { DataProvider } from '../providers/data/data';
     AddTodoPage, //추가한 부분
     MonthlyPage,
     WeeklyPage,
-    DailyPage
+    DailyPage,
+    NotimainPage
   ],
   imports: [
     NgCalendarModule, //추가한 부분2
@@ -58,12 +63,14 @@ import { DataProvider } from '../providers/data/data';
     AddTodoPage, //추가된 부분
     MonthlyPage,
     WeeklyPage,
-    DailyPage
+    DailyPage,
+    NotimainPage
   ],
   providers: [
     StatusBar,
     //TodoService,
     SplashScreen,
+    LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataProvider
   ]
